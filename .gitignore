@@ -1,0 +1,35 @@
+# Environment
+.env
+.env.local
+.env.production
+
+# Dependencies
+/vendor/
+node_modules/
+
+# Uploaded files (optional - depende kung gusto mo)
+/uploads/
+/images/uploads/
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Sensitive config
+api/config.php
+api/gemini_chat.php
+
+# Uploads folder
+uploads/
+
+# System
+.DS_Store
+Thumbs.db
+*.log
+.htaccess
+
