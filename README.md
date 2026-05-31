@@ -1,6 +1,6 @@
 # DevDcii Portfolio
 
-Personal developer portfolio with admin panel built with PHP and MySQL.
+Personal portfolio with admin panel built with PHP and MySQL with Groc API.
 
 ## Tech Stack
 - HTML, CSS, JavaScript
@@ -16,7 +16,7 @@ Personal developer portfolio with admin panel built with PHP and MySQL.
 
 ## Local Setup
 1. Clone the repo
-   git clone https://github.com/devdcii/devdcii.git
+   git clone https://github.com/devdcii/chan-portfolio.git
 
 2. Set up your database
    - Create a MySQL database

@@ -22,6 +22,7 @@ Thumbs.db
 
 # Sensitive config
 api/config.php
+api/confighosting.php
 api/gemini_chat.php
 
 # Uploads folder
