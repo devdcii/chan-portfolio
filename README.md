@@ -1,6 +1,6 @@
 # DevDcii Portfolio
 
-Personal developer portfolio with admin panel built with PHP and MySQL.
+Personal portfolio with admin panel built with PHP and MySQL with Groc API.
 
 ## Tech Stack
 - HTML, CSS, JavaScript
