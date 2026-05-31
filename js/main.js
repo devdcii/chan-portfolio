@@ -1,4 +1,4 @@
-const API_BASE = 'http://devdcii.rf.gd';
+const API_BASE = 'http://localhost/devdcii';
 
 // ─── NAV ─────────────────────────────────────────────────────
 const navbar = document.getElementById('navbar');

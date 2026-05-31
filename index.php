@@ -11,14 +11,14 @@
     <meta name="keywords" content="Christian Digman, DevDcii, Full-Stack Developer Philippines, Web Developer Pampanga, Mobile App Developer, Flutter Developer, React Developer, Laravel Developer, IoT Engineer, Shopify Developer, Data Analyst Philippines, Computer Engineer">
     <meta name="author" content="Christian Digman">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://devdcii.com/">
+    <link rel="canonical" href="http://devdcii.rf.gd/">
 
     <!-- ═══ OPEN GRAPH ═══ -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://devdcii.com/">
+    <meta property="og:url" content="http://devdcii.rf.gd/">
     <meta property="og:title" content="Christian Digman | Computer Engineer">
     <meta property="og:description" content="Full-Stack Developer, Mobile App Developer, Data Analyst based in Pampanga, Philippines. Building end-to-end web, mobile, and hardware solutions.">
-    <meta property="og:image" content="https://devdcii.com/images/devdcii.png">
+    <meta property="og:image" content="http://devdcii.rf.gd/images/devdcii.png">
     <meta property="og:site_name" content="DevDcii — Christian Digman Portfolio">
     <meta property="og:locale" content="en_PH">
 
@@ -26,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Christian Digman | Computer Engineer">
     <meta name="twitter:description" content="Full-Stack Developer, Mobile App Developer, Data Analyst based in Pampanga, Philippines.">
-    <meta name="twitter:image" content="https://devdcii.com/images/devdcii.png">
+    <meta name="twitter:image" content="http://devdcii.rf.gd/images/devdcii.png">
 
     <!-- ═══ GEO / LOCAL SEO ═══ -->
     <meta name="geo.region" content="PH-03">
@@ -41,8 +41,8 @@
         "@type": "Person",
         "name": "Christian Digman",
         "alternateName": "DevDcii",
-        "url": "https://devdcii.com",
-        "image": "https://devdcii.com/images/devdcii.png",
+        "url": "http://devdcii.rf.gd",
+        "image": "http://devdcii.rf.gd/images/devdcii.png",
         "jobTitle": "Full-Stack Developer & Computer Engineer",
         "description": "Full-Stack Developer, Mobile App Developer, Data Analyst and IoT Systems Engineer based in Santa Ana, Pampanga, Philippines.",
         "email": "digmanchristian0@gmail.com",
