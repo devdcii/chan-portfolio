@@ -36,33 +36,33 @@
 
     <!-- ═══ STRUCTURED DATA ═══ -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Christian Digman",
-        "alternateName": "DevDcii",
-        "url": "http://devdcii.rf.gd",
-        "image": "http://devdcii.rf.gd/images/devdcii.png",
-        "jobTitle": "Full-Stack Developer & Computer Engineer",
-        "description": "Full-Stack Developer, Mobile App Developer, Data Analyst and IoT Systems Engineer based in Santa Ana, Pampanga, Philippines.",
-        "email": "digmanchristian0@gmail.com",
-        "telephone": "+639993921960",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Santa Ana",
-            "addressRegion": "Pampanga",
-            "addressCountry": "PH"
-        },
-        "sameAs": [
-            "https://github.com/devdcii",
-            "https://linkedin.com/in/christiandigman"
-        ],
-        "knowsAbout": [
-            "Full-Stack Web Development", "React", "Laravel", "Node.js",
-            "Flutter", "Mobile App Development", "IoT Systems", "ESP32",
-            "Data Analytics", "Shopify Development", "Python", "PHP"
-        ]
-    }
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Christian Digman",
+            "alternateName": "DevDcii",
+            "url": "http://devdcii.rf.gd",
+            "image": "http://devdcii.rf.gd/images/devdcii.png",
+            "jobTitle": "Full-Stack Developer & Computer Engineer",
+            "description": "Full-Stack Developer, Mobile App Developer, Data Analyst and IoT Systems Engineer based in Santa Ana, Pampanga, Philippines.",
+            "email": "digmanchristian0@gmail.com",
+            "telephone": "+639993921960",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Santa Ana",
+                "addressRegion": "Pampanga",
+                "addressCountry": "PH"
+            },
+            "sameAs": [
+                "https://github.com/devdcii",
+                "https://linkedin.com/in/christiandigman"
+            ],
+            "knowsAbout": [
+                "Full-Stack Web Development", "React", "Laravel", "Node.js",
+                "Flutter", "Mobile App Development", "IoT Systems", "ESP32",
+                "Data Analytics", "Shopify Development", "Python", "PHP"
+            ]
+        }
     </script>
 
     <!-- ═══ FAVICON ═══ -->
@@ -248,11 +248,8 @@
             <div class="tech-categories">
 
                 <!-- Frontend -->
-                <div class="tech-cat-card reveal">
-                    <div class="cat-header">
-                        <div class="cat-icon"><i class="fas fa-layer-group"></i></div>
-                        <span class="cat-name">Frontend</span>
-                    </div>
+                <div class="tech-cat-row reveal">
+                    <span class="tech-cat-name">Frontend</span>
                     <div class="tech-pills">
                         <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="tech-icon" alt="">HTML5</span>
                         <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="tech-icon" alt="">CSS3</span>
@@ -269,11 +266,8 @@
                 </div>
 
                 <!-- Backend -->
-                <div class="tech-cat-card reveal">
-                    <div class="cat-header">
-                        <div class="cat-icon"><i class="fas fa-server"></i></div>
-                        <span class="cat-name">Backend</span>
-                    </div>
+                <div class="tech-cat-row reveal">
+                    <span class="tech-cat-name">Backend</span>
                     <div class="tech-pills">
                         <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="tech-icon" alt="">PHP</span>
                         <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="tech-icon" alt="">Laravel</span>
@@ -285,11 +279,8 @@
                 </div>
 
                 <!-- Database -->
-                <div class="tech-cat-card reveal">
-                    <div class="cat-header">
-                        <div class="cat-icon"><i class="fas fa-database"></i></div>
-                        <span class="cat-name">Database</span>
-                    </div>
+                <div class="tech-cat-row reveal">
+                    <span class="tech-cat-name">Database</span>
                     <div class="tech-pills">
                         <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="tech-icon" alt="">MySQL</span>
                         <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="tech-icon" alt="">PostgreSQL</span>
@@ -300,11 +291,8 @@
                 </div>
 
                 <!-- Programming -->
-                <div class="tech-cat-card reveal">
-                    <div class="cat-header">
-                        <div class="cat-icon"><i class="fab fa-python"></i></div>
-                        <span class="cat-name">Programming</span>
-                    </div>
+                <div class="tech-cat-row reveal">
+                    <span class="tech-cat-name">Programming</span>
                     <div class="tech-pills">
                         <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="tech-icon" alt="">Python</span>
                         <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="tech-icon" alt="">JavaScript</span>
@@ -315,11 +303,8 @@
                 </div>
 
                 <!-- Hardware & IoT -->
-                <div class="tech-cat-card reveal">
-                    <div class="cat-header">
-                        <div class="cat-icon"><i class="fas fa-microchip"></i></div>
-                        <span class="cat-name">Hardware &amp; IoT</span>
-                    </div>
+                <div class="tech-cat-row reveal">
+                    <span class="tech-cat-name">Hardware &amp; IoT</span>
                     <div class="tech-pills">
                         <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" class="tech-icon" alt="">Arduino</span>
                         <span class="tech-pill"><i class="fas fa-wifi tech-icon-fa"></i>ESP32</span>
@@ -332,11 +317,8 @@
                 </div>
 
                 <!-- Tools & DevOps -->
-                <div class="tech-cat-card reveal">
-                    <div class="cat-header">
-                        <div class="cat-icon"><i class="fas fa-tools"></i></div>
-                        <span class="cat-name">Tools &amp; DevOps</span>
-                    </div>
+                <div class="tech-cat-row reveal">
+                    <span class="tech-cat-name">Tools &amp; DevOps</span>
                     <div class="tech-pills">
                         <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="tech-icon" alt="">Git</span>
                         <span class="tech-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="tech-icon" alt="">GitHub</span>
@@ -389,7 +371,9 @@
                 <h2 class="section-heading">My <span class="gradient-text">Certifications</span></h2>
                 <p class="section-sub">Professional certifications and training I've completed.</p>
             </div>
-            <div class="certs-grid">
+
+            <!-- id="certsGrid" added for JS targeting -->
+            <div class="certs-grid" id="certsGrid">
 
                 <div class="cert-card reveal">
                     <div class="cert-icon-wrap"><i class="fas fa-code cert-icon"></i></div>
@@ -469,7 +453,17 @@
                     <a href="assets/certifications/excel-pro.pdf" target="_blank" class="cert-view-btn" title="View Certificate"><i class="fas fa-external-link-alt"></i></a>
                 </div>
 
+                <!-- Add more cert-card items below this line — they will be hidden until "View All" is clicked -->
+
             </div>
+
+            <!-- View All Certifications button — shown by JS only if there are more than 6 certs -->
+            <div id="certsViewAllWrap" style="text-align:center;margin-top:2.5rem;display:none;">
+                <button class="btn-ghost" style="padding:.75rem 2rem;font-size:.9rem;" onclick="toggleCerts()">
+                    <i class="fas fa-th-large"></i> View All Certifications
+                </button>
+            </div>
+
         </div>
     </section>
 

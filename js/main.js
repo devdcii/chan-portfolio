@@ -61,6 +61,8 @@ document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => revealO
 
 // ─── PROJECTS ────────────────────────────────────────────────
 let allProjects = [];
+const PROJECTS_INITIAL_LIMIT = 6;
+let showingAllProjects = false;
 
 async function loadProjects() {
   const grid = document.getElementById('projectsGrid');
@@ -84,14 +86,19 @@ function renderProjects(projects) {
   const grid = document.getElementById('projectsGrid');
   const empty = document.getElementById('projectsEmpty');
   if (!grid) return;
+
   if (!projects || !projects.length) {
     grid.innerHTML = '';
     if (empty) empty.style.display = 'block';
+    removeViewAllBtn();
     return;
   }
   if (empty) empty.style.display = 'none';
 
-  grid.innerHTML = projects.map(p => {
+  const toShow = showingAllProjects ? projects : projects.slice(0, PROJECTS_INITIAL_LIMIT);
+  const hasMore = projects.length > PROJECTS_INITIAL_LIMIT;
+
+  grid.innerHTML = toShow.map(p => {
     // Tech tags
     const tags = p.tech_stack
       ? p.tech_stack.split(',').map(t =>
@@ -99,7 +106,7 @@ function renderProjects(projects) {
       ).join('')
       : '';
 
-    // Hover buttons (only show if URL exists)
+    // Hover buttons
     const hoverBtns = [
       p.github_url
         ? `<a class="pha-btn code" href="${p.github_url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">
@@ -150,12 +157,49 @@ function renderProjects(projects) {
         </div>
       </div>`;
   }).join('');
+
+  if (hasMore) {
+    renderViewAllBtn(projects);
+  } else {
+    removeViewAllBtn();
+  }
+}
+
+function renderViewAllBtn(projects) {
+  let wrap = document.getElementById('projectsViewAllWrap');
+  if (!wrap) {
+    wrap = document.createElement('div');
+    wrap.id = 'projectsViewAllWrap';
+    wrap.style.cssText = 'text-align:center;margin-top:2.5rem;';
+    document.getElementById('projectsGrid').after(wrap);
+  }
+  const label = showingAllProjects
+    ? `<i class="fas fa-chevron-up"></i> Show Less`
+    : `<i class="fas fa-th-large"></i> View All Projects (${projects.length})`;
+  wrap.innerHTML = `<button class="btn-ghost" style="padding:.75rem 2rem;font-size:.9rem;" onclick="toggleViewAll()">${label}</button>`;
+}
+
+function removeViewAllBtn() {
+  document.getElementById('projectsViewAllWrap')?.remove();
+}
+
+function toggleViewAll() {
+  showingAllProjects = !showingAllProjects;
+  const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
+  const filtered = activeFilter === 'all'
+    ? allProjects
+    : allProjects.filter(p => p.category && p.category.toLowerCase() === activeFilter.toLowerCase());
+  renderProjects(filtered);
+  if (!showingAllProjects) {
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+    showingAllProjects = false; // reset on filter change
     const filter = btn.dataset.filter;
     renderProjects(
       filter === 'all'
@@ -187,9 +231,6 @@ async function openProject(id) {
     const p = data.project;
     const media = data.media || [];
 
-    // Build media left panel
-    const images = media.filter(m => m.type !== 'video');
-    const videos = media.filter(m => m.type === 'video');
     const allMedia = media;
 
     let mainMedia = '';
@@ -216,7 +257,6 @@ async function openProject(id) {
       p.github_url ? `<a class="modal-act-btn code" href="${p.github_url}" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>` : '',
     ].filter(Boolean).join('');
 
-    // Tech stack pills
     const techPills = p.tech_stack
       ? `<div class="modal-tech-wrap">
            <span class="modal-tech-label">Tech Stack</span>
@@ -323,10 +363,56 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closeModal(); closeLightbox(); }
 });
 
+// ─── CERTIFICATIONS ──────────────────────────────────────────
+const CERTS_LIMIT = 6;
+let showingAllCerts = false;
+
+function initCerts() {
+  const grid = document.getElementById('certsGrid');
+  if (!grid) return;
+  const cards = Array.from(grid.querySelectorAll('.cert-card'));
+  if (cards.length <= CERTS_LIMIT) return;
+
+  // Hide extras initially
+  cards.forEach((c, i) => {
+    if (i >= CERTS_LIMIT) c.style.display = 'none';
+  });
+
+  const wrap = document.getElementById('certsViewAllWrap');
+  if (wrap) {
+    wrap.style.display = 'block';
+    const btn = wrap.querySelector('button');
+    if (btn) btn.innerHTML = `<i class="fas fa-th-large"></i> View All Certifications (${cards.length})`;
+  }
+}
+
+function toggleCerts() {
+  const grid = document.getElementById('certsGrid');
+  const wrap = document.getElementById('certsViewAllWrap');
+  const btn = wrap?.querySelector('button');
+  const cards = Array.from(grid.querySelectorAll('.cert-card'));
+  showingAllCerts = !showingAllCerts;
+
+  cards.forEach((c, i) => {
+    if (i >= CERTS_LIMIT) c.style.display = showingAllCerts ? '' : 'none';
+  });
+
+  if (btn) {
+    btn.innerHTML = showingAllCerts
+      ? `<i class="fas fa-chevron-up"></i> Show Less`
+      : `<i class="fas fa-th-large"></i> View All Certifications (${cards.length})`;
+  }
+
+  if (!showingAllCerts) {
+    document.getElementById('certifications')?.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
 // ─── INIT ────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   loadProjects();
   updateActiveNav();
+  initCerts();
 });
 
 // ─── CHAT WIDGET ─────────────────────────────────────────────
@@ -348,10 +434,8 @@ async function sendChat() {
   input.disabled = true;
   document.getElementById('chatSendBtn').disabled = true;
 
-  // Show typing indicator immediately
   const typing = appendTyping();
 
-  // typing + API delay
   const delay = Math.min(1000 + msg.length * 30, 3000);
 
   const [res] = await Promise.allSettled([
